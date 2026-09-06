@@ -1,0 +1,22 @@
+// 5. Recursive function to reverse a string
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void reverseString(string &s, int start, int end) {
+    if (start >= end)
+        return;
+    swap(s[start], s[end]);
+    reverseString(s, start + 1, end - 1);
+}
+
+int main() {
+    string str;
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    reverseString(str, 0, str.length() - 1);
+    cout << "Reversed string: " << str << endl;
+    return 0;
+}
